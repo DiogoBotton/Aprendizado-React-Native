@@ -28,6 +28,10 @@ Se você prefere instalar o node por linha de comando junto do openjdk8, digite:
 
 # Configuração de variáveis de ambiente
 
+Download do Android Studio:
+
+https://developer.android.com/studio/index.html
+
 Para acessar um tutorial do próprio facebook do React Native, clique no link abaixo:
 
 http://reactnative.dev/docs/environment-setup

@@ -87,3 +87,43 @@ Para inicializar o projeto utilize:
 ### `npx react-native run-android`
 
 OBS.Apenas a primeira inicialização será demorada
+
+# Utilizando Expo Cli (Command Line Interface ou Interface de Linha de Comando)
+
+Utilizando o Expo é bem mais fácil e leve
+
+Abra o cmd (prompt de comando) do windows como administrador e digite:
+
+### `npm install -g expo-cli`
+
+Para verificar se foi instalado corretamente digite:
+
+### `expo --version`
+
+## Criando projeto com Expo Cli
+
+No terminal, digite:
+
+Isto inicializará o yarn para o projeto
+
+### `yarn init -y`
+
+Após isso, adicione o expo localmente no projeto
+
+### `yarn add expo expo-cli`
+
+Terminado a instalação da biblioteca, digite para criar o projeto:
+
+### `expo init MyApp`
+
+Siga as intruções e code feliz =)
+
+OBS. as vezes apenas o comando acima já dará conta do recado de criar o projeto e instalar todas as dependências necessárias
+
+Para inicializar o projeto digite:
+
+### `yarn start`
+
+Abrirá uma tela na WEB, tecle a letra `W` para abrir o aplicativo na mesma, ou se preferir, baixe o Expo App na play store no seu celular e escaneie o código QR para rodar em seu celular
+
+## Projeto de exemplo: natexpo (React Native + Expo Cli)

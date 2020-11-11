@@ -1,7 +1,7 @@
 # Aprendizado-React-Native
 Este repositório estará alguns projetos de aprendizado e dicas para instalação e preparação de ambiente
 
-#React native com Typescript (passo a passo)
+# React native com Typescript (passo a passo)
 
 Caso você tenha já instalado o react-native-cli, desinstale-o (é recomendado)
 

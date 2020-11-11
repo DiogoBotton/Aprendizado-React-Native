@@ -1,6 +1,10 @@
 # Aprendizado-React-Native
 Este repositório estará alguns projetos de aprendizado e dicas para instalação e preparação de ambiente
 
+## Instalação do Node.js e Yarn
+Node.js: https://nodejs.org/en/
+Yarn: https://classic.yarnpkg.com/en/docs/install/#windows-stable
+
 # React native com Typescript (passo a passo)
 
 Caso você tenha já instalado o react-native-cli, desinstale-o (é recomendado)

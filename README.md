@@ -26,6 +26,6 @@ Após a instalação do pacote, inicializar o projeto
 Para instalação do react-native puro sem definição de tipos (sem TypeScript)
 ### `npx react-native init MyApp`
 
-# Projeto de exemplo 1: natscript (React Native + JavaScript)
+## Projeto de exemplo 1: natscript (React Native + JavaScript)
 
-# Projeto de exemplo 2: natypes (React Native + TypeScript)
+## Projeto de exemplo 2: natypes (React Native + TypeScript)

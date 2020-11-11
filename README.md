@@ -44,7 +44,7 @@ Aparecerá uma janela para colocar a CHAVE da variavel e o seu valor
 
 ### Como chave do valor coloque `ANDROID_HOME`
 
-### Como valor coloque `%LOCALAPPDATA%\Android\Sdk` (sem aspas)
+### Como valor coloque `%LOCALAPPDATA%\Android\Sdk`
 
 ## Passo 2: Variavel de ambiente para plataform-tools
 

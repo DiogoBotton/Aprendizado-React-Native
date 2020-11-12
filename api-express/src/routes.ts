@@ -1,4 +1,4 @@
-import express, { json } from 'express';
+import express, { request, response } from 'express';
 
 // Importando o db do connection.ts
 import db from '../src/database/connection';
@@ -15,9 +15,9 @@ routes.get('/clientes', async (request, response) => {
 
     dataBase.serialize(() => {
         // Fazendo a busca no DB e mostrando no console
-        dataBase.each('select * from clientes', function (err: {message: any;}, row: any) {
+        dataBase.each('select * from clientes', function (err: { message: any; }, row: any) {
             // Tratativa de erros
-            if(err){
+            if (err) {
                 console.error(err.message)
             }
 
@@ -36,13 +36,13 @@ routes.post('/cadastrar-cliente', async (request, response) => {
 
     // Escrevendo em sqlite e usando concatenação de string para jogar as variaveis do corpo da requisição no lugar das INTERROGAÇÕES (no campo VALUES)
     dataBase.run(`insert into clientes (name, telefone, cep, n_casa) values (?,?,?,?)`, [
-        `${request.body.name}`,`${request.body.telefone}`,`${request.body.cep}`,`${request.body.n_casa}`
-    ], function (err: {message: any;}, row: any){
+        `${request.body.name}`, `${request.body.telefone}`, `${request.body.cep}`, `${request.body.n_casa}`
+    ], function (err: { message: any; }, row: any) {
         // Caso der algum erro
-        if(err){
+        if (err) {
             console.error(err.message);
         }
-        
+
         console.log(row)
 
         // Retorna Status code 200 caso tudo ocorra certo

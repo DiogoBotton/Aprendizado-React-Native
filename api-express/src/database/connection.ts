@@ -1,7 +1,8 @@
 // Aqui estamos pegando essa função que chama o BD e joga em uma variável
 const sqlite3 = require('sqlite3').verbose();
 
-const db = new sqlite3.Database('./clientes.sqlite', sqlite3.OPEN_READWRITE, (err: {message: any}) => {
+// Necessita que o path (caminho) do arquivo .sqlite esteja completamente específicado
+const db = new sqlite3.Database('./src/database/clientes.sqlite', sqlite3.OPEN_READWRITE, (err: {message: any}) => {
     // Conectando com DB
     if(err){
         console.log(err.message);

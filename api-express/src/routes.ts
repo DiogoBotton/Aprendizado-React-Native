@@ -50,4 +50,56 @@ routes.post('/cadastrar-cliente', async (request, response) => {
     })
 })
 
+routes.delete('/remover-cliente/:id', async (request, response) => {
+    const dataBase = await db;
+
+    // Escrevendo em sqlite e usando concatenação de string para jogar as variaveis do corpo da requisição no lugar das INTERROGAÇÕES (no campo VALUES)
+    dataBase.run(`delete from clientes where rowid=?`, [`${request.params.id}`],
+        function (err: { message: any; }, row: any) {
+            // Caso der algum erro
+            if (err) {
+                console.error(err.message);
+            }
+
+            console.log(row)
+
+            // Retorna Status code 200 caso tudo ocorra certo
+            return response.send(200)
+        })
+})
+
+routes.put('/atualizar-cliente/:id', async (request, response) => {
+    const dataBase = await db;
+
+    let sql = `
+    update clientes
+    set name=?,
+    telefone=?,
+    cep=?,
+    n_casa=?
+    where rowid=?
+    `
+
+    // Escrevendo em sqlite e usando concatenação de string para jogar as variaveis do corpo da requisição no lugar das INTERROGAÇÕES (no campo VALUES)
+    dataBase.run(sql,
+        [
+            `${request.body.name}`,
+            `${request.body.telefone}`,
+            `${request.body.cep}`,
+            `${request.body.n_casa}`,
+            `${request.params.id}`
+        ],
+        function (err: { message: any; }, row: any) {
+            // Caso der algum erro
+            if (err) {
+                console.error(err.message);
+            }
+
+            console.log(row)
+
+            // Retorna Status code 200 caso tudo ocorra certo
+            return response.send(200)
+        })
+})
+
 export default routes;

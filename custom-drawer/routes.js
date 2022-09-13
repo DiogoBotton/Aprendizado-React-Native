@@ -5,14 +5,18 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import Home from './Screens/Home';
 import Configurations from './Screens/Configurations';
 import Profile from './Screens/Profile';
+import Login from './Screens/Login';
 import CustomDrawer from './Components/CustomDrawer';
 import { Ionicons, AntDesign, EvilIcons } from '@expo/vector-icons';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 export default function Routes() {
-  return (
-    <NavigationContainer>
+
+  const DrawerNavigation = () => {
+    return (
       <Drawer.Navigator
         drawerContent={props => <CustomDrawer {...props} />}
         screenOptions={{
@@ -41,6 +45,16 @@ export default function Routes() {
           )
         }} />
       </Drawer.Navigator>
+    );
+  }
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Login'>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="custom_drawer" component={DrawerNavigation} options={{
+          headerShown: false
+        }} />
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }
